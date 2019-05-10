@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="short icon" type="image/png" href="images/v.png">
+    <title>Research</title>
+    <script type="application/javascript" src="js/jquery-3.3.1.js"></script>
+    <script src="js/"></script>
+</head>
+<body>
+
+<figure>
+    <img src="images/phone.jpg" alt="About phone" width="100%" height="50%" />
+    <figcaption>
+        <p>This is the images of something interesting.</p>
+    </figcaption>
+</figure>
+
+<h2> To-do List</h2>
+    <ul contenteditable="true" id="edit">
+        <li>Break mechanical cab driver.</li>
+        <li>Drive to abandoned factory</li>
+        <li>Watch video of self</li>
+    </ul>
+
+<script>
+    $(function () {
+
+        'use strict'; //this code work in the modern way always use it in top
+        let message;
+
+        message = "Hello World"; //Store string
+
+        alert(message);
+
+
+        //Declare variable
+        var edit = document.getElementById('edit');
+        $(edit).blur( function () {
+           localStorage.setItem('todoData', this.innerHTML);
+        });
+
+        // When the page load
+        if(localStorage.getItem('todoData')){
+            edit.innerHTML = localStorage.getItem('todoData');
+        }
+        console.log(edit);
+    });
+
+
+</script>
+</body>
+</html>
